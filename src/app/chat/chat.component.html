@@ -1,0 +1,22 @@
+<div class="chat-container">
+    <div class="chat-header">
+      Chat Room
+    </div>
+    <div class="chat-messages">
+      <div *ngFor="let message of messages">
+        <div *ngIf="message.username">
+            <p><strong>{{message.username}}:</strong> {{message.text}}</p>
+        </div>
+        <div *ngIf="!message.user">
+            <p>{{message}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="chat-input">
+      <form (ngSubmit)="sendMessage()">
+        <input type="text" [(ngModel)]="messageText" name="messageText" placeholder="Type your message here...">
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+  
