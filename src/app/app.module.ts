@@ -8,7 +8,11 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 const config: SocketIoConfig = {
 	url: 'http://localhost:3000', // socket server url;
 	options: {
-		transports: ['websocket']
+		transports: ['websocket'],
+    query: {
+      //Gửi token ở đây để xác nhận ở BE
+      token: 'thodd'
+    }
 	}
 }
 @NgModule({

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {io} from 'socket.io-client';
 import { Socket } from 'ngx-socket-io';  
 
 @Component({
@@ -15,8 +14,6 @@ export class ChatComponent implements OnInit {
   constructor(private socket: Socket) { }
 
   ngOnInit() {
-    // socket = io('http://localhost:3000');
-
     this.socket.on('new-message', (message: any) => {
       this.messages.push(message);
     });
